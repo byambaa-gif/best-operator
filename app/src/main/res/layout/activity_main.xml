@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ScrollView xmlns:android='http://schemas.android.com/apk/res/android'
+    xmlns:tools='http://schemas.android.com/tools'
+    android:layout_width='match_parent'
+    android:layout_height='match_parent'
+    tools:context='.MainActivity'>
+
+    <LinearLayout
+        android:layout_width='match_parent'
+        android:layout_height='wrap_content'
+        android:orientation='vertical'
+        android:padding='20dp'>
+
+        <TextView
+            android:layout_width='match_parent'
+            android:layout_height='wrap_content'
+            android:text='SMS Gateway'
+            android:textSize='24sp'
+            android:textStyle='bold' />
+
+        <TextView
+            android:layout_width='match_parent'
+            android:layout_height='wrap_content'
+            android:layout_marginTop='8dp'
+            android:text='Send OTP or custom messages manually or via HTTP API.' />
+
+        <EditText
+            android:id='@+id/portInput'
+            android:layout_width='match_parent'
+            android:layout_height='wrap_content'
+            android:layout_marginTop='16dp'
+            android:hint='Server port (e.g. 8080)'
+            android:inputType='number' />
+
+        <EditText
+            android:id='@+id/apiKeyInput'
+            android:layout_width='match_parent'
+            android:layout_height='wrap_content'
+            android:layout_marginTop='10dp'
+            android:hint='API key (X-API-Key header)'
+            android:inputType='textPassword' />
+
+        <TextView
+            android:id='@+id/serverStatusText'
+            android:layout_width='match_parent'
+            android:layout_height='wrap_content'
+            android:layout_marginTop='10dp'
+            android:text='Server: STOPPED'
+            android:textStyle='bold' />
+
+        <TextView
+            android:id='@+id/endpointText'
+            android:layout_width='match_parent'
+            android:layout_height='wrap_content'
+            android:layout_marginTop='6dp'
+            android:text='POST http://&lt;phone-ip&gt;:8080/send' />
+
+        <Button
+            android:id='@+id/startServerButton'
+            android:layout_width='match_parent'
+            android:layout_height='wrap_content'
+            android:layout_marginTop='12dp'
+            android:text='Start API Server' />
+
+        <Button
+            android:id='@+id/stopServerButton'
+            android:layout_width='match_parent'
+            android:layout_height='wrap_content'
+            android:layout_marginTop='8dp'
+            android:text='Stop API Server' />
+
+        <View
+            android:layout_width='match_parent'
+            android:layout_height='1dp'
+            android:layout_marginTop='18dp'
+            android:background='#DDDDDD' />
+
+        <EditText
+            android:id='@+id/phoneInput'
+            android:layout_width='match_parent'
+            android:layout_height='wrap_content'
+            android:layout_marginTop='18dp'
+            android:hint='Recipient phone number'
+            android:inputType='phone' />
+
+        <EditText
+            android:id='@+id/messageInput'
+            android:layout_width='match_parent'
+            android:layout_height='140dp'
+            android:layout_marginTop='12dp'
+            android:gravity='top|start'
+            android:hint='Message text'
+            android:inputType='textMultiLine'
+            android:minLines='4' />
+
+        <Button
+            android:id='@+id/generateOtpButton'
+            android:layout_width='match_parent'
+            android:layout_height='wrap_content'
+            android:layout_marginTop='12dp'
+            android:text='Generate OTP Message' />
+
+        <Button
+            android:id='@+id/sendButton'
+            android:layout_width='match_parent'
+            android:layout_height='wrap_content'
+            android:layout_marginTop='10dp'
+            android:text='Send SMS' />
+
+    </LinearLayout>
+</ScrollView>
