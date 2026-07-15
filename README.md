@@ -1,68 +1,36 @@
-# SMS Gateway (Android, Java)
+﻿# Tsagadai SMS Gateway
 
-Simple Android app to send OTP or custom SMS messages from your phone.
+Android SMS gateway that pulls queued OTP messages from the Tsagadai Render backend and sends them through the phone SIM.
 
-## Features
-- Manual SMS sending from app UI
-- Generate 6-digit OTP message automatically
-- Embedded HTTP API server on device (`POST /send`)
-- API key protection with `X-API-Key` header
-- Supports long messages via multipart SMS
+## Reliable operation
 
-## Project structure
-- `app/src/main/java/com/example/smsgateway/MainActivity.java`
-- `app/src/main/java/com/example/smsgateway/SmsGatewayServer.java`
-- `app/src/main/res/layout/activity_main.xml`
-- `app/src/main/AndroidManifest.xml`
+- Runs as a foreground service with a permanent status notification.
+- Polls the backend and sends a heartbeat every 20 seconds.
+- Uses `START_STICKY` so Android can recreate the service after process termination.
+- Restarts after phone reboot or app replacement when the gateway was previously enabled.
+- Stores its backend URL, enabled state, device credentials, status, and latest delivery result.
 
-## Open and run
-1. Open this folder in Android Studio.
-2. Let Android Studio sync Gradle.
-3. Connect an Android phone with SIM and SMS capability.
-4. Run app and grant SMS permission.
-5. Enter API key and port, then tap **Start API Server**.
+## Install and start
 
-## API
-Endpoint:
-- `POST http://<phone-ip>:8080/send`
+1. Open the project in Android Studio and use the embedded JDK 17 or newer.
+2. Install it on the Samsung.
+3. Allow SMS and notification permissions.
+4. Tap **Connect to Backend** once.
+5. Confirm the permanent Tsagadai SMS Gateway notification says `ONLINE`.
 
-Headers:
-- `Content-Type: application/json`
-- `X-API-Key: <your-api-key>`
+The app screen may then be closed; do not press **Disconnect**.
 
-Body (custom message):
-```json
-{
-  "phone": "+97695591155",
-  "message": "Hello from gateway"
-}
+## Required Samsung settings
+
+1. Open **Settings > Apps > SMS Gateway > Battery** and select **Unrestricted** or enable background activity.
+2. Open **Settings > Battery and device care > Battery > Background usage limits** and add the gateway to **Never sleeping apps**.
+3. Keep the phone connected to power with Wi-Fi or mobile data enabled.
+4. Maintain SIM balance and verify outgoing SMS remains available.
+
+If the app is force-stopped in Android Settings, Android blocks automatic restart. Open it and tap **Connect to Backend** again.
+
+## Build
+
+```powershell
+.\gradlew.bat assembleDebug
 ```
-
-Body (OTP message):
-```json
-{
-  "phone": "+12025550123",
-  "otp": true
-}
-```
-
-Response:
-```json
-{
-  "ok": true,
-  "message": "SMS sent"
-}
-```
-
-cURL example:
-```bash
-curl -X POST "http://<phone-ip>:8080/send" \
-  -H "Content-Type: application/json" \
-  -H "X-API-Key: change-this-api-key" \
-  -d '{"phone":"+12025550123","otp":true}'
-```
-
-## Notes
-- `gradle-wrapper.jar` and `gradlew` scripts are not included yet. Android Studio can still import and generate required files when syncing.
-- Keep phone and caller system on reachable network.
-- For production use, keep a strong API key and avoid exposing this endpoint to public internet.

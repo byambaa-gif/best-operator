@@ -4,7 +4,7 @@
             "outputFile": "com.example.smsgateway.app-mergeDebugResources-2:/values-ldrtl-v17/values-ldrtl-v17.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ByambaErdeneN\\.gradle\\caches\\transforms-4\\4e41cfd688f0c663f7cc7298d2b06c3e\\transformed\\material-1.12.0\\res\\values-ldrtl-v17\\values-ldrtl-v17.xml",
+                    "source": "C:\\Users\\ByambaErdeneN\\.gradle\\caches\\8.13\\transforms\\8eec43785a0d4133a460876e59edf347\\transformed\\material-1.12.0\\res\\values-ldrtl-v17\\values-ldrtl-v17.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

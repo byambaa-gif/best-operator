@@ -4,7 +4,7 @@
             "outputFile": "com.example.smsgateway.app-mergeDebugResources-2:/values-sw600dp-v13/values-sw600dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ByambaErdeneN\\.gradle\\caches\\transforms-4\\4e41cfd688f0c663f7cc7298d2b06c3e\\transformed\\material-1.12.0\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "C:\\Users\\ByambaErdeneN\\.gradle\\caches\\8.13\\transforms\\8eec43785a0d4133a460876e59edf347\\transformed\\material-1.12.0\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,10,11,12,13,14",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\ByambaErdeneN\\.gradle\\caches\\transforms-4\\1ad5d81293179a39a17ccecf7df9a6ef\\transformed\\appcompat-1.7.0\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "C:\\Users\\ByambaErdeneN\\.gradle\\caches\\8.13\\transforms\\bb573a00df45ec4f1445350cae645369\\transformed\\appcompat-1.7.0\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
